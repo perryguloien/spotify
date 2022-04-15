@@ -20,3 +20,4 @@ def weather_forecast_api():
         return jsonify(results)
     else:
         return jsonify({"message":"Invalid Geography. Please try again."}), 404
+@weather_routes.route("/weather/form")

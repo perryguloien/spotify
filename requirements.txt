@@ -16,3 +16,8 @@ sendgrid==6.6.0
 
 pytest
 flask
+gunicorn
+
+# 
+# TEST
+# 
