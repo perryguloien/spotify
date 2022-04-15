@@ -11,7 +11,7 @@ def weather_forecast_api():
     print("WEATHER FORECAST (API)...")
     print("URL PARAMS:", dict(request.args))
 
-    country_code = request.args["country_code"] # the dict might not have this key all the time
+    # country_code = request.args["country_code"] # the dict might not have this key all the time
     country_code = request.args.get("country_code") or "US"
     zip_code = request.args.get("zip_code") or "20057"
 
