@@ -1,22 +1,20 @@
-# Daily Briefings App (Python)
+# Spotify Artist Recommendation App (Python)
 
-Sends you a customized email every morning, with information of interest, such as the upcoming weather forecast for your zip code.
-
-![](https://user-images.githubusercontent.com/1328807/77860069-173ef580-71db-11ea-83c6-5897bb9f4f51.png)
+Sends you a customized email with artist recommendations based on previously liked artists linked to a user's Spotify account. 
 
 ## Installation
 
-Create a copy of this [template repo](https://github.com/prof-rossetti/daily-briefings-py), then clone or download your new repo onto your local computer (for example to the Desktop), and navigate there from the command-line:
+Create a copy of this repo (https://github.com/perryguloien/spotify), then clone or download your new repo onto your local computer (for example to the Desktop), and navigate there from the command-line:
 
 ```sh
-cd ~/Desktop/daily-briefings-py/
+cd ~/Desktop/spotify/
 ```
 
-Use Anaconda to create and activate a new virtual environment, perhaps called "briefings-env":
+Use Anaconda to create and activate a new virtual environment, perhaps called "spotify-env":
 
 ```sh
-conda create -n briefings-env python=3.8
-conda activate briefings-env
+conda create -n spotify-env python=3.8
+conda activate spotify-env
 ```
 
 Then, within an active virtual environment, install package dependencies:
@@ -29,6 +27,7 @@ pip install -r requirements.txt
 
 Follow these [SendGrid setup instructions](https://github.com/prof-rossetti/intro-to-python/blob/master/notes/python/packages/sendgrid.md#setup) to sign up for a SendGrid account, configure your account's email address (i.e. `SENDER_EMAIL_ADDRESS`), and obtain an API key (i.e. `SENDGRID_API_KEY`).
 
+
 Create a new file called ".env" in the root directory of this repo, and paste the following contents inside, using your own values as appropriate:
 
 ```sh
@@ -38,12 +37,7 @@ Create a new file called ".env" in the root directory of this repo, and paste th
 SENDGRID_API_KEY="_______________"
 SENDER_EMAIL_ADDRESS="_______________"
 
-# optional vars:
-#APP_ENV="development"
-#COUNTRY_CODE="US"
-#ZIP_CODE="10017"
-#USER_NAME="Jon Snow"
-```
+# optional vars: 
 
 ## Usage
 
@@ -101,5 +95,3 @@ FLASK_APP=web_app flask run
 flask run
 
 ## TEST
-
-heyyyyyy this is crazyyyyy i am working on your thing too!
