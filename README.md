@@ -99,3 +99,7 @@ Running python on server:
 FLASK_APP=web_app flask run
 
 flask run
+
+## TEST
+
+heyyyyyy this is crazyyyyy i am working on your thing too!
