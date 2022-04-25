@@ -1,7 +1,5 @@
 import os
-from unicodedata import name
 
-from matplotlib import artist
 from dotenv import load_dotenv
 import sys
 
@@ -37,7 +35,7 @@ def search_artist(name):
         quit()
 
 #tested search function
-#search_artist(name)
+search_artist(name)
 
 print(artist_id)
 
@@ -49,7 +47,7 @@ def get_similar_artists(artist_id):
         similar_artists.append(n['name'])
     return(similar_artists[0:5])
 
-get_similar_artists(artist_id)
+print(get_similar_artists(artist_id))
 
 
 
