@@ -41,7 +41,7 @@ SENDER_EMAIL_ADDRESS="_______________"
 
 ## Usage
 
-Printing today's weather forecast (to test the Weather.gov API):
+Emailing the user a list of artists similar to their favorite artist:
 
 ```sh
 python -m app.weather_service
