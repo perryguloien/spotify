@@ -1,5 +1,7 @@
 import os
 from unicodedata import name
+
+from matplotlib import artist
 from dotenv import load_dotenv
 import sys
 
@@ -21,24 +23,33 @@ name = input("Artist Full Name:")
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-
-results = sp.search(q='artist:' + name, type='artist')
-items = results['artists']['items']
-if len(items) > 0:
-    artist = items[0]
-    artist_id = (artist['id'])
-
-    if artist_id is None:
+#function searches by artist name and returns the artist ID
+def search_artist(name):
+    results = sp.search(q='artist:' + name, type='artist')
+    items = results['artists']['items']
+    if len(items) > 0:
+        artist = items[0]
+        global artist_id 
+        artist_id = artist['id']
+        return(artist_id)
+    else:
         print("There are no results for your input.")
-        exit()
+        quit()
+
+#tested search function
+#search_artist(name)
+
+print(artist_id)
 
 similar_artists = []
 
-related_artists = sp.artist_related_artists(artist_id)
-for n in related_artists['artists']:
-    similar_artists.append(n['name'])
-print(similar_artists[0:5])
+def get_similar_artists(artist_id):
+    related_artists = sp.artist_related_artists(artist_id)
+    for n in related_artists['artists']:
+        similar_artists.append(n['name'])
+    return(similar_artists[0:5])
 
+get_similar_artists(artist_id)
 
 
 
