@@ -6,6 +6,7 @@ python-dotenv
 pandas #might not need this
 requests 
 sendgrid==6.6.0
+spotipy
 
 #
 # TEST
