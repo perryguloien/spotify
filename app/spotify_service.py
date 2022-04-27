@@ -23,12 +23,14 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 #function searches by artist name and returns the artist ID
 def search_artist(name):
+    #search from the spotipy api
     results = sp.search(q='artist:' + name, type='artist')
     items = results['artists']['items']
     if len(items) > 0:
         artist = items[0]
         global artist_id 
         artist_id = artist['id']
+        print(artist_id)
         return(artist_id)
     else:
         print("There are no results for your input.")
@@ -37,7 +39,6 @@ def search_artist(name):
 #tested search function
 search_artist(name)
 
-print(artist_id)
 
 similar_artists = []
 
@@ -45,9 +46,10 @@ def get_similar_artists(artist_id):
     related_artists = sp.artist_related_artists(artist_id)
     for n in related_artists['artists']:
         similar_artists.append(n['name'])
+    print(similar_artists[0:5])
     return(similar_artists[0:5])
 
-print(get_similar_artists(artist_id))
+get_similar_artists(artist_id)
 
 
 
