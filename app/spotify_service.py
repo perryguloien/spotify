@@ -22,34 +22,25 @@ client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, clien
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 #function searches by artist name and returns the artist ID
-def search_artist(name):
+def artist_recommendation(name):
     #search from the spotipy api
-    results = sp.search(q='artist:' + name, type='artist')
+    #results = sp.search(q='artist:' + name, type='artist')
+    results = sp.search(name, type='artist')
     items = results['artists']['items']
     if len(items) > 0:
-        artist = items[0]
-        global artist_id 
+        artist = items[0] 
         artist_id = artist['id']
-        print(artist_id)
-        return(artist_id)
+        similar_artists = []
+        related_artists = sp.artist_related_artists(artist_id)
+        for n in related_artists['artists']:
+            similar_artists.append(n['name'])
+        print(similar_artists[0:5])
+        return(similar_artists[0:5])
     else:
         print("There are no results for your input.")
-        quit()
+        return None
 
-#tested search function
-search_artist(name)
-
-
-similar_artists = []
-
-def get_similar_artists(artist_id):
-    related_artists = sp.artist_related_artists(artist_id)
-    for n in related_artists['artists']:
-        similar_artists.append(n['name'])
-    print(similar_artists[0:5])
-    return(similar_artists[0:5])
-
-get_similar_artists(artist_id)
+artist_recommendation(name)
 
 
 
