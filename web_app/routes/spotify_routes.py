@@ -8,14 +8,20 @@ from flask import Blueprint, request, jsonify, render_template, redirect, flash 
 
 spotify_routes = Blueprint("spotify_routes", __name__)
 
-@spotify_routes.route("/spotify")
+@spotify_routes.route("/spotify_form")
+def spotify_form():
+    return render_template("spotify_form.html")
+
+@spotify_routes.route("/spotify", methods = ["POST"])
 def recommend_artist():
     print("ARTIST RECOMMENDATIONS..")
-    request_data = dict(request.args)
-    name = request_data.get("name")
-    results = artist_recommendation(name = name)
+    request_data = dict(request.form)  
+    print("Form data:" , request_data)
+    artist_name = request_data.get("artist_name") or "Taylor Swift"
+    results = artist_recommendation(name = artist_name)
+    print(results)
     flash("ARTIST RECOMMENDATIONS PROVIDED SUCCESSFULLY!")
-    return render_template("spotify.html")
+    return render_template("spotify_results.html", results = results)
 
 if __name__ == '__main__':
    app.run()

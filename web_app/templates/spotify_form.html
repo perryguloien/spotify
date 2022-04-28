@@ -1,0 +1,20 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "about" %}
+
+{% block content %}
+
+  <h2>Artist Recommendation Form</h2>
+
+  <p>Provides artist recommendations based on a liked artist...</p>
+
+  <form action="/spotify" method="POST">
+
+      <label>Artist Name:</label>
+      <input type="text" name="artist_name" placeholder="Taylor Swift" value="Taylor Swift">
+      <br>
+
+      <button>Submit</button>
+  </form>
+
+
+{% endblock %}
