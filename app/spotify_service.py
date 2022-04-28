@@ -29,13 +29,10 @@ def artist_recommendation(name):
         artist_id = artist['id']
         similar_artists = []
         related_artists = sp.artist_related_artists(artist_id)
-        related_ids = []
         
 
         for n in related_artists['artists'][0:5]:
             similar_artists.append({"names": n['name'], "display_images": n['images'][1]['url'], "songs": [] })
-            related_ids.append(n['id'])
-            #print(related_ids)
             related_songs = sp.artist_top_tracks(n['id'])
             print(n['name'])
         
@@ -48,9 +45,9 @@ def artist_recommendation(name):
                     hold_songs.append(hold)
                     a = a + 1
                                 
-                    artist['songs'] = hold_songs
+                artist['songs'] = hold_songs
 
-
+;.
             #print(related_songs['tracks'][0]['name'])
             #print(related_songs['tracks'][1]['name'])
             #print(related_songs['tracks'][2]['name'])
