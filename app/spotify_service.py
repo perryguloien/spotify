@@ -1,4 +1,5 @@
 import os
+from re import A
 
 from dotenv import load_dotenv
 import sys
@@ -29,37 +30,29 @@ def artist_recommendation(name):
         artist_id = artist['id']
         similar_artists = []
         related_artists = sp.artist_related_artists(artist_id)
+
         
 
         for n in related_artists['artists'][0:5]:
             similar_artists.append({"names": n['name'], "display_images": n['images'][1]['url'], "songs": [] })
             related_songs = sp.artist_top_tracks(n['id'])
-            print(n['name'])
+            #print(n['name'])
         
+
             for artist in similar_artists:
                 a = 0
                 hold_songs = []
                 while a < 5:
-                    hold = related_songs['tracks'][a]['name']
-                    print(hold)
+                    hold = related_songs['tracks'][a]['name'] 
                     hold_songs.append(hold)
-                    a = a + 1
-                                
-                artist['songs'] = hold_songs
-
-;.
-            #print(related_songs['tracks'][0]['name'])
-            #print(related_songs['tracks'][1]['name'])
-            #print(related_songs['tracks'][2]['name'])
-            #print(related_songs['tracks'][3]['name'])
-            #print(related_songs['tracks'][4]['name'])
-        print("------------------------------------------")
-            #similar_artists.append(related_songs)
-            #similar_artists.append(n['images'][1]['url'])
+                    artist['songs'] = hold_songs
+                    a = a + 1 
+                #print(hold_songs)
+            print("------------------------------------------")
+            #print(hold_songs)
         print(similar_artists[0:5])
-        #print(songs[0:5])
-        #print(related_artists)
         return(similar_artists[0:5])
+        
     
     else:
         print("There are no results for your input.")
@@ -72,4 +65,8 @@ if __name__ == "__main__":
 
 
 
-
+ #print(related_songs['tracks'][0]['name'])
+            #print(related_songs['tracks'][1]['name'])
+            #print(related_songs['tracks'][2]['name'])
+            #print(related_songs['tracks'][3]['name'])
+            #print(related_songs['tracks'][4]['name'])

@@ -23,8 +23,13 @@
                 BOOTSTRAP ALERTS
                 https://getbootstrap.com/docs/5.0/components/alerts/#dismissing
             -->
-            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert" style="margin-bottom:0;">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <style>
+                    #btn{  
+                    font-size: 25px;
+                    }  
+            </style>
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert" >
+                <button id = "btn" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 {{ message }}
             </div>
         {% endfor %}
@@ -38,13 +43,11 @@
     -->
     {% set nav_links = [
       ('/about', 'about', 'About'),
-      ('/hello', 'hello', 'Hello'),
-      ('/weather/form', 'weather_form', 'Weather Form')
     ] -%}
     {% set active_page = active_page|default('home') -%}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style = "background-color: rgb (30,215,96);">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">My Web App</a>
+            <a class="navbar-brand" href="/">Spotify Recommender</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -78,7 +81,7 @@
             {% endblock %}
         </div>
 
-        <footer style="margin-top:2em; margin-bottom:2em;">
+        <footer style="margin-top:39em; margin-bottom:0em;">
         <hr>
             &copy; Copyright 2021 | Abby Lee & Basil Bseiso & Perry Guloien |
             <!-- <a href="https://github.com/prof-rossetti/intro-to-python/blob/main/exercises/web-app/README.md">Source</a> -->
