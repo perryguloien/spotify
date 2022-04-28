@@ -18,10 +18,11 @@ def recommend_artist():
     request_data = dict(request.form)  
     print("Form data:" , request_data)
     artist_name = request_data.get("artist_name") or "Taylor Swift"
+    related_songs = request_data.get("")
     results = artist_recommendation(name = artist_name)
     print(results)
     flash("ARTIST RECOMMENDATIONS PROVIDED SUCCESSFULLY!")
-    return render_template("spotify_results.html", results = results)
+    return render_template("spotify_results.html", results = results, artist_name = artist_name, related_songs = related_songs)
 
 if __name__ == '__main__':
    app.run()

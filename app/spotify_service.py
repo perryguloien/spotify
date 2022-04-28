@@ -29,10 +29,27 @@ def artist_recommendation(name):
         artist_id = artist['id']
         similar_artists = []
         related_artists = sp.artist_related_artists(artist_id)
-        for n in related_artists['artists']:
-            similar_artists.append(n['name'])
+        related_ids = []
+
+        for n in related_artists['artists'][0:5]:
+            similar_artists.append({"names": n['name'], "display_images": n['images'][1]['url']})
+            related_ids.append(n['id'])
+            #print(related_ids)
+            
+            related_songs = sp.artist_top_tracks(n['id'])
+            print(n['name'])
+            print(related_songs['tracks'][0]['name'])
+            print(related_songs['tracks'][1]['name'])
+            print(related_songs['tracks'][2]['name'])
+            print(related_songs['tracks'][3]['name'])
+            print(related_songs['tracks'][4]['name'])
+            print("------------------------------------------")
+            #similar_artists.append(related_songs)
+            #similar_artists.append(n['images'][1]['url'])
         print(similar_artists[0:5])
+        #print(related_artists)
         return(similar_artists[0:5])
+    
     else:
         print("There are no results for your input.")
         return None

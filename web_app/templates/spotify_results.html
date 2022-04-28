@@ -1,3 +1,25 @@
-<pre>
-    {{results}}
-</pre>
+
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "about" %}
+
+{% block content %}
+
+  <h2>Results</h2>
+
+  <p>Here are recommended artists similar to {{artist_name}}. </p>
+
+  <table>
+    {% for n in results %}:
+    <tr>
+        <td> {{ n["names"] }}</td>
+    </tr>
+
+    <tr>
+        <td> <img src="{{ n["display_images"] }}" height = "100" width = "100" > </td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+
+{% endblock %}
