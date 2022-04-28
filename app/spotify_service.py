@@ -29,29 +29,61 @@ def artist_recommendation(name):
         artist = items[0] 
         artist_id = artist['id']
         similar_artists = []
+        similar_artists_ids = []
         related_artists = sp.artist_related_artists(artist_id)
 
-        
 
         for n in related_artists['artists'][0:5]:
             similar_artists.append({"names": n['name'], "display_images": n['images'][1]['url'], "songs": [] })
-            related_songs = sp.artist_top_tracks(n['id'])
+            #print(n['id'])
+            similar_artists_ids.append(n['id'])
+            #related_songs = sp.artist_top_tracks(n['id'])
             #print(n['name'])
         
-
-            for artist in similar_artists:
-                a = 0
-                hold_songs = []
-                while a < 5:
-                    hold = related_songs['tracks'][a]['name'] 
-                    hold_songs.append(hold)
-                    artist['songs'] = hold_songs
-                    a = a + 1 
-                #print(hold_songs)
-            print("------------------------------------------")
+        b = 0
+        for artist in similar_artists:
+            _id = similar_artists_ids[b]
+            #print(_id)
+            related_songs = sp.artist_top_tracks(_id)
+            a = 0
+            hold_songs = []
+            while a < 5:
+                hold = related_songs['tracks'][a]['name'] 
+                hold_songs.append(hold)
+                #artist['songs'] = hold_songs
+                a = a + 1 
+            #print(hold_songs)
+            artist['songs'] = hold_songs
+            b = b+1
+        print("------------------------------------------")
             #print(hold_songs)
         print(similar_artists[0:5])
         return(similar_artists[0:5])
+
+        
+
+        # for n in related_artists['artists'][0:5]:
+        #     similar_artists.append({"names": n['name'], "display_images": n['images'][1]['url'], "songs": [] })
+        #     related_songs = sp.artist_top_tracks(n['id'])
+        #     #print(n['name'])
+        
+
+        #     for artist in similar_artists:
+        #         a = 0
+        #         hold_songs = []
+        #         while a < 5:
+        #             hold = related_songs['tracks'][a]['name'] 
+        #             hold_songs.append(hold)
+        #             #artist['songs'] = hold_songs
+        #             a = a + 1 
+        #         #print(hold_songs)
+        #         artist['songs'] = hold_songs
+        #     print("------------------------------------------")
+        #     #print(hold_songs)
+        # print(similar_artists[0:5])
+        # return(similar_artists[0:5])
+
+        
         
     
     else:
