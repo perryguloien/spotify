@@ -21,8 +21,7 @@ def recommend_artist():
     artist_name = request_data.get("artist_name") or "Taylor Swift"
     results = artist_recommendation(name = artist_name)
     print(results)
-    flash("ARTIST RECOMMENDATIONS PROVIDED SUCCESSFULLY!")
-    print('HEHEHEHEHEHHEHEHEHEHEHHEHEHEH')
+    flash("Artist Recommendations Provided Successfully!")
     return render_template("spotify_results.html", results = results[0], artist_name = results[1])
 
 if __name__ == '__main__':

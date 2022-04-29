@@ -6,7 +6,7 @@
 
   <h2>Results</h2>
 
-  <p>Here are recommended artists similar to {{artist_name}}. </p>
+  <p>Here are recommended artists similar to {{artist_name}}. Check out their top tracks! </p>
 
   <table>
     {% for n in results %}:
@@ -17,10 +17,15 @@
     <tr>
         <td> <img src="{{ n["display_images"] }}" height = "100" width = "100"  style = "border-radius: 15px;"> </td>
     </tr>
+    
+    <tr>
+        <td> {{ n["names"] }}'s Top Songs: {{n["songs"]}} </td>
+    </tr>
 
     <tr>
-        <td> {{ n["songs"]}} </td>
+        <td>_________________________________________________________________________________________________________________________________________________________________________ </td>
     </tr>
+
 
     {% endfor %}
 </table>
