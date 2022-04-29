@@ -9,7 +9,7 @@ from flask import Blueprint, request, jsonify, render_template, redirect, flash 
 
 spotify_routes = Blueprint("spotify_routes", __name__)
 
-@spotify_routes.route("/spotify_form")
+@spotify_routes.route("/")
 def spotify_form():
     return render_template("spotify_form.html")
 
