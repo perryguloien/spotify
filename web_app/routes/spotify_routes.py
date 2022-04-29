@@ -24,6 +24,13 @@ def recommend_artist():
     flash("Artist Recommendations Provided Successfully!")
     return render_template("spotify_results.html", results = results[0], artist_name = results[1])
 
+@spotify_routes.route("/about")
+def about():
+    print("ABOUT...")
+    #return "About Me"
+    return render_template("about.html")
+
+
 if __name__ == '__main__':
    app.run()
 

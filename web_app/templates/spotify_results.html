@@ -6,12 +6,16 @@
 
   <h2>Results</h2>
 
-  <p>Here are recommended artists similar to {{artist_name}}. Check out their top tracks! </p>
+  <p>Here are recommended artists similar to {{artist_name}}. Check out their top tracks... </p>
 
   <table>
     {% for n in results %}:
     <tr>
-        <td> {{ n["names"] }}</td>
+        <td>_________________________________________________________________________________________________________________________________________________________________________ </td>
+    </tr>
+
+    <tr>
+        <td><b>  <font size="+1">{{ n["names"] }}</font></b></td>
     </tr>
 
     <tr>
@@ -19,13 +23,8 @@
     </tr>
     
     <tr>
-        <td> {{ n["names"] }}'s Top Songs: {{n["songs"]}} </td>
+        <td><b>{{ n["names"] }}'s Top Songs:</b>  {{n["songs"]}} </td>
     </tr>
-
-    <tr>
-        <td>_________________________________________________________________________________________________________________________________________________________________________ </td>
-    </tr>
-
 
     {% endfor %}
 </table>
