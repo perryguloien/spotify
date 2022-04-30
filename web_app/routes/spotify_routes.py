@@ -18,7 +18,7 @@ def recommend_artist():
     print("ARTIST RECOMMENDATIONS..")
     request_data = dict(request.form)  
     print("Form data:" , request_data)
-    artist_name = request_data.get("artist_name") or "Taylor Swift"
+    artist_name = request_data.get("artist_name") or "Dua Lipa"
     results = artist_recommendation(name = artist_name)
     print(results)
     flash("Artist Recommendations Provided Successfully!")
