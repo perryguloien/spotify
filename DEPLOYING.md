@@ -49,14 +49,8 @@ Instead of using a ".env" file, we will directly configure the server's environm
 heroku config # at this time, results might be empty-ish
 
 # set environment variables:
-heroku config:set APP_ENV="production"
-
-heroku config:set SENDGRID_API_KEY="_________"
-heroku config:set SENDER_EMAIL_ADDRESS="someone@gmail.com"
-
-heroku config:set COUNTRY_CODE="US"
-heroku config:set ZIP_CODE="20057"
-heroku config:set USER_NAME="Jon Snow"
+heroku config:set CLIENT_ID=""
+heroku config:set CLIENT_SECRET=""
 ```
 
 At this point, you should be able to verify the production environment has been configured with the proper environment variable values:
@@ -83,11 +77,11 @@ Once you've deployed the source code to the Heroku server, login to the server t
 heroku run bash # login to the server
 # ... whoami # see that you are not on your local computer anymore
 # ... ls -al # optionally see the files, nice!
-# ... python -m app.daily_briefing # see the output, nice!
+# ... python -m app.spotify_service # see the output, nice!
 # ... exit # logout
 
 # or alternatively, run it from your computer, in "detached" mode:
-heroku run "python -m app.daily_briefing"
+heroku run "python -m app.spotify_service"
 ```
 
 ## Scheduling the Script

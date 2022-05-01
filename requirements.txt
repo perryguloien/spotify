@@ -3,9 +3,8 @@
 # DEVELOPMENT / PRODUCTION
 
 python-dotenv
-pandas #might not need this
+pandas 
 requests 
-sendgrid==6.6.0
 spotipy
 
 #
@@ -15,7 +14,3 @@ spotipy
 pytest
 flask
 gunicorn
-
-# 
-# TEST
-# 
