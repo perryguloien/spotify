@@ -43,7 +43,7 @@ python -m app.spotify_service
 
 ### Web Application
 
-Running the web app locally:
+Running the web app:
 
 ```sh
 # Mac OS:
