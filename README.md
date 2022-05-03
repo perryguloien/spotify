@@ -72,10 +72,3 @@ Follow the deployment instructions to deploy the app to a remote server.
 
 ## [License](/LICENSE.md)
 
-Running python on server: 
-
-```sh
-FLASK_APP=web_app flask run
-
-flask run
-
