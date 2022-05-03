@@ -40,6 +40,7 @@ CLIENT_SECRET = "______________"
 ### Background Jobs
 ```sh
 python -m app.spotify_service
+```
 
 ### Web Application
 
