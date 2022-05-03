@@ -33,6 +33,7 @@ Create a new file called ".env" in the root directory of this repo, and paste th
 # required vars:
 CLIENT_ID = "______________"
 CLIENT_SECRET = "______________"
+```
 
 ## Usage
 
@@ -52,6 +53,7 @@ FLASK_APP=web_app flask run
 # ... if `export` doesn't work for you, try `set` instead
 export FLASK_APP=web_app
 flask run
+```
 
 ## Testing
 
