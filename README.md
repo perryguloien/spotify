@@ -36,8 +36,22 @@ CLIENT_SECRET = "______________"
 
 ## Usage
 
+### Background Jobs
 ```sh
 python -m app.spotify_service
+
+### Web Application
+
+Running the web app locally (then view localhost:5000 in the browser):
+
+```sh
+# Mac OS:
+FLASK_APP=web_app flask run
+
+# Windows OS:
+# ... if `export` doesn't work for you, try `set` instead
+export FLASK_APP=web_app
+flask run
 
 ## Testing
 
