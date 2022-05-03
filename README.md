@@ -1,7 +1,6 @@
 # Spotify Artist Recommendation App (Python)
 
-Hello User!
-This application generates a list of recommended artists and their top songs based on an inputted artist name. Follow the instructions below!
+This application generates a list of recommended artists and their top songs based on an inputted artist name.
 
 ## Installation
 
@@ -44,7 +43,7 @@ python -m app.spotify_service
 
 ### Web Application
 
-Running the web app locally (then view localhost:5000 in the browser):
+Running the web app locally:
 
 ```sh
 # Mac OS:
