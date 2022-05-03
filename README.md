@@ -1,6 +1,7 @@
 # Spotify Artist Recommendation App (Python)
 
-Sends you a customized email with artist recommendations based on previously liked artists linked to a user's Spotify account. 
+Hello User!
+This application generates a list of recommended artists and their top songs based on an inputted artist name. Follow the instructions below!
 
 ## Installation
 
