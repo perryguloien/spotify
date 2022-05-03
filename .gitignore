@@ -1,5 +1,5 @@
 # .gitignore
 
 .env
-
-__pycache__
+.cache
+app.__pycache__
