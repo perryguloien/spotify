@@ -85,5 +85,4 @@ heroku run "python -m app.spotify_service"
 ```
 
 ## It's Alive!
-
 Congratulations, enjoy the app!
