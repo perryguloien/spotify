@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ## Configuration
 
-Create a new file called ".env" in the root directory of this repo, and paste the following contents (Spotify Client_ID and Client_Secret) inside, using your own values as appropriate:
+Create a new file called ".env" in the root directory of this repo, and paste the following contents (Spotify CLIENT_ID and CLIENT_SECRET) inside, using your own values as appropriate:
 
 ```sh
 # these are example contents for the ".env" file:
