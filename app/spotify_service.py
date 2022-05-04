@@ -12,8 +12,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 load_dotenv() # load environment variables 
 
 #SET VARIABLES WITH ENV INFO
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+CLIENT_ID = os.environ.get("CLIENT_ID")
+CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
 
 #SET UP CODE SO WE CAN USE THE SPOTIPY API DATA
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
