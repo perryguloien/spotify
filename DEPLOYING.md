@@ -85,5 +85,4 @@ heroku run "python -m app.spotify_service"
 ```
 
 ## It's Alive!
-
-Congratulations, you have just deployed a software service!
+Congratulations, enjoy the app!
