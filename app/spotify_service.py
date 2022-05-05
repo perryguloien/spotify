@@ -22,9 +22,9 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 #function searches by artist name and returns the artist reccommendations and reccomended songs
 def artist_recommendation(name):
     results = sp.search(q='artist:' + name, type='artist')
-    items = results['artists']['items']
-    if len(items) > 0:
-        artist = items[0] 
+    #items = results['artists']['items']
+    if len(results['artists']['items']) > 0:
+        artist = results['artists']['items'][0] 
         artist_id = artist['id']
         similar_artists = []
         similar_artists_ids = []
@@ -48,8 +48,8 @@ def artist_recommendation(name):
                 a = a + 1 
             artist['songs'] = hold_songs
             b = b+1
-        #print("------------------------------------------")
-        #print(similar_artists[0:5])
+        print("------------------------------------------")
+        print(similar_artists[0:5])
         return(similar_artists[0:5], name_res)
   
     else:
