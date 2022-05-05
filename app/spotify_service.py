@@ -48,8 +48,8 @@ def artist_recommendation(name):
                 a = a + 1 
             artist['songs'] = hold_songs
             b = b+1
-        print("------------------------------------------")
-        print(similar_artists[0:5])
+        #print("------------------------------------------")
+        #print(similar_artists[0:5])
         return(similar_artists[0:5], name_res)
   
     else:
