@@ -1,6 +1,6 @@
 # Spotify Artist Recommendation App (Python)
 
-This application generates a list of recommended artists and their top songs based on an inputted artist name.
+This application generates a list of recommended artists and their top songs based on an inputted artist name. Check out our web application at: http://spotify-r.herokuapp.com/.
 
 ## Installation
 
